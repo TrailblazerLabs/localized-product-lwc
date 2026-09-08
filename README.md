@@ -5,10 +5,10 @@ This is the core structure of Trailblazer Labs repos
 ![Project Banner](./assets/banner.png)
 
 ## Overview
-[1-2 sentences explaining exactly what this asset does and who it is for.]
+AI-Driven Salesforce Product Summarizer automatically transforms complex product records into clear, sales-ready descriptions that help representatives understand, position, and sell products with confidence. Using AI and business-specific product knowledge, it generates customer-friendly summaries, identifies ideal audiences, explains industry abbreviations, and creates multilingual content that can be published across Salesforce and customer-facing experiences.
 
 ## The Problem It Solves
-[Describe the pain point, manual process, or architectural gap this project addresses.]
+Sales representatives often have to interpret complex, inconsistent, or highly technical product data to understand what a product does, who it is for, and how to position it, and they have to do that on the fly. This solution turns that raw product information into clear, consistent, sales-ready content automatically.
 
 ## See it in Action
 ![Demo GIF or Image](./assets/demo.gif)
