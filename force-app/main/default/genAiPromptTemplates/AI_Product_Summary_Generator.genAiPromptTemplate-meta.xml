@@ -35,7 +35,7 @@ Produce a structured product summary that helps a Salesforce user quickly unders
 - what important abbreviations mean
 
 INPUT RECORD
-{!$Input:Product.Name} 
+{!$Input:Product.Name}
 {!$Input:Product.Family}
 {!$Input:Product.ProductCode}
 {!$Input:Product.Description}
@@ -179,20 +179,20 @@ Produce a structured product summary that helps a Salesforce user quickly unders
 - what important abbreviations mean
 
 INPUT RECORD
-{!$Input:Product.Name} 
+{!$Input:Product.Name}
 {!$Input:Product.Family}
 {!$Input:Product.ProductCode}
 {!$Input:Product.Description}
-{!$Input:Product.IsActive} 
+{!$Input:Product.IsActive}
 {!$Input:Product.Author__c}
 {!$Input:Product.Binding_Format__c}
 {!$Input:Product.Digital_Product__c}
 {!$Input:Product.Grade_Level__c}
-{!$Input:Product.Imprint__c} 
+{!$Input:Product.Imprint__c}
 {!$Input:Product.ISBN__c}
 {!$Input:Product.Subject__c}
 {!$Input:Product.Publisher__c}
-{!$Input:Product.Type} 
+{!$Input:Product.Type}
 {!$Input:Product.Platform__c}
 {!$Input:Product.Page_Count__c}
 {!$Input:Product.Material_Type__c}
@@ -239,7 +239,7 @@ positioningBullets:
 - If customer fit is unclear, say so briefly.
 
 decodedTerms:
-- Include only abbreviations that appear in the product data and have active expansions available. 
+- Include only abbreviations that appear in the product data and have active expansions available.
 - Do not include common measurement units such as kW, hp, lb, ft, in, V, or A in decodedTerms unless an approved business expansion is explicitly provided.
 
 
@@ -351,20 +351,20 @@ Produce a structured product summary that helps a Salesforce user quickly unders
 - what important abbreviations mean
 
 INPUT RECORD
-{!$Input:Product.Name} 
+{!$Input:Product.Name}
 {!$Input:Product.Family}
 {!$Input:Product.ProductCode}
 {!$Input:Product.Description}
-{!$Input:Product.IsActive} 
+{!$Input:Product.IsActive}
 {!$Input:Product.Author__c}
 {!$Input:Product.Binding_Format__c}
 {!$Input:Product.Digital_Product__c}
 {!$Input:Product.Grade_Level__c}
-{!$Input:Product.Imprint__c} 
+{!$Input:Product.Imprint__c}
 {!$Input:Product.ISBN__c}
 {!$Input:Product.Subject__c}
 {!$Input:Product.Publisher__c}
-{!$Input:Product.Type} 
+{!$Input:Product.Type}
 {!$Input:Product.Platform__c}
 {!$Input:Product.Page_Count__c}
 {!$Input:Product.Material_Type__c}
@@ -411,7 +411,7 @@ positioningBullets:
 - If customer fit is unclear, say so briefly.
 
 decodedTerms:
-- Include only abbreviations that appear in the product data and have active expansions available. 
+- Include only abbreviations that appear in the product data and have active expansions available.
 - Do not include common measurement units such as kW, hp, lb, ft, in, V, or A in decodedTerms unless an approved business expansion is explicitly provided.
 
 
@@ -524,20 +524,20 @@ Produce a structured product summary that helps a Salesforce user quickly unders
 - what important abbreviations mean
 
 INPUT RECORD
-{!$Input:Product.Name} 
+{!$Input:Product.Name}
 {!$Input:Product.Family}
 {!$Input:Product.ProductCode}
 {!$Input:Product.Description}
-{!$Input:Product.IsActive} 
+{!$Input:Product.IsActive}
 {!$Input:Product.Author__c}
 {!$Input:Product.Binding_Format__c}
 {!$Input:Product.Digital_Product__c}
 {!$Input:Product.Grade_Level__c}
-{!$Input:Product.Imprint__c} 
+{!$Input:Product.Imprint__c}
 {!$Input:Product.ISBN__c}
 {!$Input:Product.Subject__c}
 {!$Input:Product.Publisher__c}
-{!$Input:Product.Type} 
+{!$Input:Product.Type}
 {!$Input:Product.Platform__c}
 {!$Input:Product.Page_Count__c}
 {!$Input:Product.Material_Type__c}
@@ -584,7 +584,7 @@ positioningBullets:
 - If customer fit is unclear, say so briefly.
 
 decodedTerms:
-- Include only abbreviations that appear in the product data and have active expansions available. 
+- Include only abbreviations that appear in the product data and have active expansions available.
 - Do not include common measurement units such as kW, hp, lb, ft, in, V, or A in decodedTerms unless an approved business expansion is explicitly provided.
 
 
