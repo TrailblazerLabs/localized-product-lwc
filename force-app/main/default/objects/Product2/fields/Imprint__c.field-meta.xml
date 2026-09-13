@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Imprint__c</fullName>
+    <description>Publishing imprint associated with the product.</description>
+    <label>Imprint</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Imprint A</fullName>
+                <default>false</default>
+                <label>Imprint A</label>
+            </value>
+            <value>
+                <fullName>Imprint B</fullName>
+                <default>false</default>
+                <label>Imprint B</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,52 @@
+.slds-card {
+  margin: 1rem;
+}
+
+.button-row {
+  margin: 0.75rem 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.summary-input {
+  margin-top: 0.5rem;
+}
+
+.section {
+  margin-top: 0.9rem;
+}
+
+.section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #5c5c5c;
+  margin-bottom: 0.25rem;
+}
+
+.list {
+  margin-left: 1rem;
+}
+
+.warning-list {
+  color: #ba0517;
+}
+
+.success {
+  color: #2e844a;
+  font-weight: 700;
+  margin-top: 0.75rem;
+}
+
+.error {
+  color: #ba0517;
+  font-weight: 700;
+  margin-top: 0.75rem;
+}
+
+.neutral {
+  color: #706e6b;
+  font-weight: 700;
+  margin-top: 0.75rem;
+}

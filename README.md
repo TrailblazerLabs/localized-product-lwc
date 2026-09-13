@@ -1,42 +1,83 @@
-# Cohort-Repo-Template
-This is the core structure of Trailblazer Labs repos
-# [Project Name]
+# Localized Product LWC
 
-![Project Banner](./assets/banner.png)
+Localized Product LWC is a Salesforce solution that uses Prompt Builder to turn Product records into grounded, sales-ready summaries in English, Spanish, Portuguese, or Hindi. Users generate a draft, review and edit it, and explicitly save the approved summary back to the corresponding Product field.
 
-## Overview
-AI-Driven Salesforce Product Summarizer automatically transforms complex product records into clear, sales-ready descriptions that help representatives understand, position, and sell products with confidence. Using AI and business-specific product knowledge, it generates customer-friendly summaries, identifies ideal audiences, explains industry abbreviations, and creates multilingual content that can be published across Salesforce and customer-facing experiences.
+## What it includes
 
-## The Problem It Solves
-Sales representatives often have to interpret complex, inconsistent, or highly technical product data to understand what a product does, who it is for, and how to position it, and they have to do that on the fly. This solution turns that raw product information into clear, consistent, sales-ready content automatically.
+- `aiProductSummarizer` Lightning Web Component for generation, review, and save
+- Apex service and response DTO
+- `AI Product Summary Generator` Prompt Builder template
+- English, Spanish, Portuguese, and Hindi Product summary fields
+- grounded abbreviation custom metadata with example records
+- Product fields referenced by the prompt template
+- least-privilege `Localized Product AI User` permission set
+- Apex and Jest tests
 
-## See it in Action
-![Demo GIF or Image](./assets/demo.gif)
-*(Optional: Link to a Loom or YouTube walkthrough video here)*
+## Prerequisites
 
-## Quick Start Guide
+- Salesforce org with Einstein generative AI and Prompt Builder enabled
+- Salesforce CLI v2 for command-line installation
+- Node.js 20 or later for local Jest and lint validation
+- Users who run the feature need Salesforce's Prompt Template User entitlement/permission in addition to the included permission set
 
-### Prerequisites
-- [e.g., Requires Agentforce or Service Cloud]
-- [e.g., My Domain must be enabled]
+## Install
 
-### Option 1: 1-Click Install (Recommended for Admins)
-Deploy this asset directly to your Sandbox or Developer Edition org without touching the command line.
+```bash
+git clone https://github.com/TrailblazerLabs/localized-product-lwc.git
+cd localized-product-lwc
+npm install
+sf project deploy start --source-dir force-app --target-org YOUR_ORG_ALIAS
+sf org assign permset --name Localized_Product_AI_User --target-org YOUR_ORG_ALIAS
+```
 
-[![Deploy to Salesforce](https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png)](https://githubsfdeploy.herokuapp.com?owner=Trailblazer-Labs&repo=your-repo-name)
+After deployment, verify that **AI Product Summary Generator** is active in Prompt Builder. Add **AI Product Summarizer** to a Product record page in Lightning App Builder and activate the page.
 
-### Option 2: Install via Salesforce CLI (For Developers)
-If you prefer to deploy using a local environment, run the following commands:
+## Validate locally
 
-1. Clone this repository:
-   `git clone https://github.com/Trailblazer-Labs/your-repo-name.git`
-2. Deploy the metadata to your target org:
-   `sf project deploy start --target-org your-alias`
+```bash
+npm test
+npm run lint
+npm run prettier:verify
+sf project deploy start --dry-run --source-dir force-app \
+  --test-level RunSpecifiedTests --tests AIProductSummaryServiceTest \
+  --target-org YOUR_ORG_ALIAS
+```
 
-### Post-Installation Steps
-1. Assign the necessary permission sets:
-   `sf org assign permset --name Your_Perm_Set`
-2. [Add any manual setup steps here, like activating a Flow or adjusting a layout]
+## How it works
 
-## About the Creator
-Built by [@YourGitHubUsername](https://github.com/YourGitHubUsername) as part of the Trailblazer Labs Builder in Residence Cohort.
+1. A user opens a Product record and selects a language.
+2. Apex supplies grounded Product data and approved abbreviation mappings to Prompt Builder.
+3. The prompt returns structured JSON containing a summary, customer fit, positioning bullets, decoded terms, and warnings.
+4. The LWC presents the response for human review.
+5. The user explicitly saves the approved summary to the language-specific Product field.
+
+The prompt instructs the model not to invent unsupported product claims and surfaces missing or uncertain source data as warnings. See [Architecture](docs/ARCHITECTURE.md) and [User Guide](docs/USER-GUIDE.md) for more detail.
+
+## Project structure
+
+```text
+force-app/main/default/
+├── classes/
+├── customMetadata/
+├── genAiPromptTemplates/
+├── lwc/aiProductSummarizer/
+├── objects/Product2/fields/
+├── objects/Product_Abbreviation_Map__mdt/
+└── permissionsets/
+```
+
+## Security and configuration
+
+- No credentials, tokens, or Named Credential secrets are stored in this repository.
+- Apex uses sharing and checks object and field access before reading or saving Product data.
+- Generated text is not saved automatically; users review it before committing it to Product.
+- Treat the included abbreviation records as examples and maintain approved terminology for your organization.
+- Publisher, platform, and imprint picklist values are neutral placeholders; replace them with your organization's approved taxonomy after installation.
+
+## License
+
+Licensed under the Apache License 2.0. See [LICENSE](LICENSE).
+
+## Creator
+
+Built by Stephanie Sisson as part of the Trailblazer Labs Builder in Residence cohort.

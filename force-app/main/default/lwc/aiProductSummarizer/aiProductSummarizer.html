@@ -1,0 +1,84 @@
+<template>
+  <div class="slds-card">
+    <div class="slds-card__header slds-grid">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title">AI Product Summarizer</h2>
+        </div>
+      </header>
+    </div>
+
+    <div class="slds-card__body slds-card__body_inner">
+      <div class="button-row">
+        <lightning-button
+          data-id="generate"
+          variant="brand"
+          label="Generate"
+          onclick={handleGenerate}
+          disabled={generateDisabled}
+        >
+        </lightning-button>
+        <lightning-button
+          data-id="save"
+          variant="neutral"
+          label="Save"
+          onclick={handleSave}
+          disabled={saveDisabled}
+        >
+        </lightning-button>
+      </div>
+      <lightning-combobox
+        data-id="language"
+        name="language"
+        label="Language"
+        value={language}
+        options={languageOptions}
+        disabled={isBusy}
+        onchange={handleLanguageChange}
+      >
+      </lightning-combobox>
+
+      <lightning-textarea
+        data-id="summary"
+        class="summary-input"
+        label="Summary"
+        value={summary}
+        disabled={isBusy}
+        onchange={handleSummaryChange}
+      >
+      </lightning-textarea>
+
+      <template if:true={statusMessage}>
+        <div class={statusVariant}>{statusMessage}</div>
+      </template>
+
+      <template if:true={bestFitCustomer}>
+        <div class="section">
+          <div class="section-title">Best-fit customer</div>
+          <div>{bestFitCustomer}</div>
+        </div>
+      </template>
+
+      <template if:true={hasPositioningBullets}>
+        <div class="section">
+          <div class="section-title">Positioning bullets</div>
+          <div>{positioningBulletsText}</div>
+        </div>
+      </template>
+
+      <template if:true={hasDecodedTerms}>
+        <div class="section">
+          <div class="section-title">Decoded terms</div>
+          <div>{decodedTermsText}</div>
+        </div>
+      </template>
+
+      <template if:true={hasWarnings}>
+        <div class="section">
+          <div class="section-title">Warnings</div>
+          <div class="warning-list">{warningsText}</div>
+        </div>
+      </template>
+    </div>
+  </div>
+</template>
