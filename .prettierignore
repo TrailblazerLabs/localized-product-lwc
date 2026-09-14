@@ -1,0 +1,14 @@
+# Ignore artifacts:
+coverage
+.sfdx
+.sf
+
+# Ignore node_modules:
+node_modules
+
+# Ignore package.xml because it's used for mdapi deploys and can break source-format deploys.
+package.xml
+
+# Repository-maintainer templates are intentionally preserved as provided.
+CONTRIBUTING.md
+.github/assets

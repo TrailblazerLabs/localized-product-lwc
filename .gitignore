@@ -1,0 +1,25 @@
+# Salesforce DX
+.sfdx/
+.localdevserver/
+.sf/
+
+# Node
+node_modules/
+npm-debug.log
+
+# VS Code
+.vscode/settings.json
+.vscode/launch.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test results
+test-results/
+coverage/
+junit.xml
+
+# Build artifacts
+*.zip
+*.jar
